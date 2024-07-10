@@ -23,8 +23,8 @@
     <div class="screen-overlay"></div>
     <aside class="navbar-aside" id="offcanvas_aside">
         <div class="aside-top">
-            <a href="index.html" class="brand-wrap">
-                <img src="assets/imgs/theme/logo.svg" class="logo" alt="Evara Dashboard">
+            <a href="{{route('home')}}" class="brand-wrap">
+                <img src="{{asset('backend/assets/imgs/theme/logo.svg')}}" class="logo" alt="Evara Dashboard">
             </a>
             <div>
                 <button class="btn btn-icon btn-aside-minimize"> <i class="text-muted material-icons md-menu_open"></i> </button>
@@ -33,9 +33,18 @@
         <nav>
             <ul class="menu-aside">
                 <li class="menu-item active">
-                    <a class="menu-link" href="index.html"> <i class="icon material-icons md-home"></i>
+                    <a class="menu-link" href="{{route('home')}}"> <i class="icon material-icons md-home"></i>
                         <span class="text">Dashboard</span>
                     </a>
+                </li>
+                <li class="menu-item has-submenu">
+                    <a class="menu-link" href="page-products-list.html"> <i class="icon material-icons md-shopping_bag"></i>
+                        <span class="text">Employees</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="page-products-list.html">Employee Create</a>
+                        <a href="page-products-list.html">Employee List</a>
+                    </div>
                 </li>
                 <li class="menu-item has-submenu">
                     <a class="menu-link" href="page-products-list.html"> <i class="icon material-icons md-shopping_bag"></i>
@@ -48,11 +57,47 @@
                 </li>
                 <li class="menu-item has-submenu">
                     <a class="menu-link" href="page-products-list.html"> <i class="icon material-icons md-shopping_bag"></i>
+                        <span class="text">Banner</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="page-products-list.html">Banner Create</a>
+                        <a href="page-products-list.html">Banner List</a>
+                    </div>
+                </li>
+                <li class="menu-item has-submenu">
+                    <a class="menu-link" href="page-products-list.html"> <i class="icon material-icons md-shopping_bag"></i>
+                        <span class="text">Campaign</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="page-products-list.html">Campaign Create</a>
+                        <a href="page-products-list.html">Campaign List</a>
+                    </div>
+                </li>
+                <li class="menu-item has-submenu">
+                    <a class="menu-link" href="page-products-list.html"> <i class="icon material-icons md-shopping_bag"></i>
+                        <span class="text">Sevice</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="page-products-list.html">Sevice Create</a>
+                        <a href="page-products-list.html">Sevice List</a>
+                    </div>
+                </li>
+                <li class="menu-item has-submenu">
+                    <a class="menu-link" href="page-products-list.html"> <i class="icon material-icons md-shopping_bag"></i>
                         <span class="text">Products</span>
                     </a>
                     <div class="submenu">
                         <a href="page-products-list.html">Product Create</a>
                         <a href="page-products-list.html">Product List</a>
+                    </div>
+                </li>
+                <li class="menu-item has-submenu">
+                    <a class="menu-link" href="page-products-list.html"> <i class="icon material-icons md-shopping_bag"></i>
+                        <span class="text">Coupon</span>
+                    </a>
+                    <div class="submenu">
+                        <a href="page-products-list.html">Coupon Create</a>
+                        <a href="page-products-list.html">Coupon List</a>
                     </div>
                 </li>
                 <li class="menu-item has-submenu">
@@ -79,13 +124,16 @@
                 </li>
                 <li class="menu-item has-submenu">
                     <a class="menu-link" href="page-form-product-1.html"> <i class="icon material-icons md-add_box"></i>
-                        <span class="text">Add product</span>
+                        <span class="text">Shipping</span>
+                    </a>
+                </li>
+                <li class="menu-item has-submenu">
+                    <a class="menu-link" href="page-sellers-cards.html"> <i class="icon material-icons md-store"></i>
+                        <span class="text">Configuration</span>
                     </a>
                     <div class="submenu">
-                        <a href="page-form-product-1.html">Add product 1</a>
-                        <a href="page-form-product-2.html">Add product 2</a>
-                        <a href="page-form-product-3.html">Add product 3</a>
-                        <a href="page-form-product-4.html">Add product 4</a>
+                        <a href="page-sellers-cards.html">Site Setting</a>
+                        <a href="page-sellers-list.html">Custom Code</a>
                     </div>
                 </li>
                 <li class="menu-item has-submenu">

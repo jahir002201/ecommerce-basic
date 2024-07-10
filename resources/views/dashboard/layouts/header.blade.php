@@ -31,22 +31,27 @@
             <li class="dropdown nav-item">
                 <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" id="dropdownLanguage" aria-expanded="false"><i class="material-icons md-public"></i></a>
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownLanguage">
-                    <a class="dropdown-item text-brand" href="#"><img src="assets/imgs/theme/flag-us.png" alt="English">English</a>
-                    <a class="dropdown-item" href="#"><img src="assets/imgs/theme/flag-fr.png" alt="Français">Français</a>
-                    <a class="dropdown-item" href="#"><img src="assets/imgs/theme/flag-jp.png" alt="Français">日本語</a>
-                    <a class="dropdown-item" href="#"><img src="assets/imgs/theme/flag-cn.png" alt="Français">中国人</a>
+                    <a class="dropdown-item text-brand" href="#"><img src="{{asset('backend/assets/imgs/theme/flag-us.png')}}" alt="English">English</a>
                 </div>
             </li>
             <li class="dropdown nav-item">
-                <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" id="dropdownAccount" aria-expanded="false"> <img class="img-xs rounded-circle" src="assets/imgs/people/avatar2.jpg" alt="User"></a>
+                <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#" id="dropdownAccount" aria-expanded="false">
+                    @if(Auth::user()->image)
+                    {{-- If the user has a profile image, display it --}}
+                   <img src="{{ asset('upload/backend/photos/'.Auth::user()->image) }}" alt="Profile Photo" class="rounded-circle" width="50" height="50" style="border: 1px solid #ddd;">
+                    @else
+                 <img src="{{ Avatar::create(Auth::user()->name)->toBase64() }}" alt="Profile Photo" class="rounded-circle" width="50" height="50" style="border: 1px solid #ddd;">
+                  @endif
+                </a>
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownAccount">
-                    <a class="dropdown-item" href="#"><i class="material-icons md-perm_identity"></i>Edit Profile</a>
-                    <a class="dropdown-item" href="#"><i class="material-icons md-settings"></i>Account Settings</a>
-                    <a class="dropdown-item" href="#"><i class="material-icons md-account_balance_wallet"></i>Wallet</a>
-                    <a class="dropdown-item" href="#"><i class="material-icons md-receipt"></i>Billing</a>
-                    <a class="dropdown-item" href="#"><i class="material-icons md-help_outline"></i>Help center</a>
+                    <a class="dropdown-item" href="{{route('profile.edit')}}"><i class="material-icons md-perm_identity"></i>Edit Profile</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item text-danger" href="#"><i class="material-icons md-exit_to_app"></i>Logout</a>
+                    <a class="dropdown-item text-danger" href="#"><i class="material-icons md-exit_to_app"></i>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit" class="dropdown-item text-danger">Logout</button>
+                        </form>
+                    </a>
                 </div>
             </li>
         </ul>
